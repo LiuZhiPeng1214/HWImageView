@@ -38,19 +38,46 @@
         	    <version>v1.0.0</version>
         	</dependency>
    ```
+   
 ## 使用方法
-    - 首先在Application的onCreate中调用
-    ```
-        public class MyApplication extends Application {
-            @Override
-            public void onCreate() {
-                super.onCreate();
-                HWImageView.init(this);
-                HWGifImageView.init(this);
-            }
-        }
-    ```
-    - 
+ - 在Application的onCreate中调用
+ ```
+ public class MyApplication extends Application {
+     @Override
+     public void onCreate() {
+         super.onCreate();
+         HWImageView.init(this); //正常图
+         HWGifImageView.init(this); //动图
+     }
+ }
+
+```
+- 使用示例
+
+xml使用
+```
+ <com.huwen.imagelibrary.HWImageView
+        android:id="@+id/iv_img"
+        android:layout_width="200dp"
+        android:layout_height="200dp"/>
+```
+activity中使用
+```
+imageView = new SHImageView(context);
+
+
+//网络图片
+imageView.setImageUrl("http://t.cn/R5JfqHu");
+//本地图片
+//imageView.setImageUrl("file://sdcard/sample/xxx.jpg");
+//gif图片
+//imageView.setImageUrl("file://sdcard/sample/xxx.gif");
+    
+//在setImageUrl之前调用
+imageView.setWrapContentEnable(true);//支持自适应宽高
+//可以注入压缩接口
+imageView.setCompressCallback(CompressCallback compressCallback);
+```
     
 
     
