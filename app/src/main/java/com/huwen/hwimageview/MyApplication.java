@@ -2,6 +2,7 @@ package com.huwen.hwimageview;
 
 import android.app.Application;
 
+import com.huwen.imagelibrary.HWCircleImageView;
 import com.huwen.imagelibrary.HWGifImageView;
 import com.huwen.imagelibrary.HWImageView;
 
@@ -11,5 +12,6 @@ public class MyApplication extends Application {
         super.onCreate();
         HWImageView.init(this);
         HWGifImageView.init(this);
+        HWCircleImageView.init(this);
     }
 }

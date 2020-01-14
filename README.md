@@ -78,6 +78,37 @@ imageView.setWrapContentEnable(true);//支持自适应宽高
 //可以注入压缩接口
 imageView.setCompressCallback(CompressCallback compressCallback);
 ```
+
+### HWImageView 普通图片
+```
+//直接设置url，其他都不用管
+public void setImageUrl(String url);
+
+//直接设置res id，其他都不用管
+public void setImageRes(int resId);
+
+//静态方法，用来手动清除内存里的缓存
+public static void clearMemoryCaches();
+
+//静态方法，用来手动清除文件里的缓存
+public static void clearDiskCaches();
+
+//静态方法，用来手动清除所有缓存
+public static void clearCaches();
+
+//静态方法，初始化，放在application的oncreate里 
+public static void init(Context context);
+```
+
+### HWCircleImageView 圆形图片
+```
+/设置边框颜色
+void setBorderColor(int color);
+
+//设置边框宽度
+void setBorderWidth(int width);
+```
+
     
 
     
